@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h2>Check your train timings:</h2>
+		<h3>{{ name }}</h3>
+		<p>{{ status }}</p>
+		<table style="max-width: 500px; width: 100%; border-collapse: collapse;">
+			<thead style="font-weight: bold; background-color: #e0e0e0">
+				<tr>
+					<td style="padding: 3px;">Station Name</td>
+					<td style="padding: 3px;">Departure Time</td>
+					<td style="padding: 3px;">Train Status</td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for row in rows %}
+				<tr style="{{ loop.cycle('','background-color: #f2f2f2;') }}
+				{#- 
+					A hyphen in front of the block tag strips whitespace AND
+					the newline character from the previous line
+				#}
+				{%- if loop.last -%}
+					font-weight: bold;
+				{%- endif %}">
+					<td style="padding: 3px;">{{ row[0] }}</td>
+					<td style="padding: 3px;">{{ row[1] }}</td>
+					<td style="padding: 3px;">{{ row[2] }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>
