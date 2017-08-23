@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# Script to send email reminders about train timings
+# wimt - Where is my train?
+# Python script to find your train's current location
 
 import argparse
 import configparser
@@ -15,6 +16,9 @@ from lxml import html
 from jinja2 import Environment, FileSystemLoader 
 
 BASE_URL = 'https://runningstatus.in/status/{}-today'
+
+# Requests' default user agent might get blocked, so use a more
+# appropriate one
 USER_AGENT= ('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36'
            '(KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36')
 HEADERS = {'User-Agent' : USER_AGENT}
