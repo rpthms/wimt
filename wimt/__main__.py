@@ -6,7 +6,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Find your train's current location")
     parser.add_argument('-b', '--boarding-station',
-        help='limit the output to the given boarding station',
+        help='limit the output till the given boarding station',
         dest='station')
     parser.add_argument('-s', '--send-to',
         help='send the output to the given email ID',

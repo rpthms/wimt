@@ -6,6 +6,13 @@ Options available:
 - Limit output till your boarding station
 - Send an email report instead of getting console output
 
+# Installation
+You can use either of the following methods:
+- Clone the repo and install manually
+  `python setup.py install`
+- Run pip directly on the master branch's archive file
+  `pip install https://github.com/rpthms/wimt/archive/master.zip` 
+
 # Syntax
 ```
 usage: wimt [-h] [-b STATION] [-s EMAIL] train
@@ -18,13 +25,12 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   -b STATION, --boarding-station STATION
-                        limit the output to the given boarding station
+                        limit the output till the given boarding station
   -s EMAIL, --send-to EMAIL
                         send the output to the given email ID
 ```
 
 # Email Report
-
 To get reports via email, you need to setup a configuration file with the required SMTP server settings. The configuration file will be searched in your home directory at `~/.config/wimt.conf`. The format of the configuration file is shown in the below example:
 ```
 [SMTP]
