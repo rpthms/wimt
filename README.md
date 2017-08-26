@@ -66,3 +66,4 @@ Coimbatore Jn.                E.T.D.: 03:15 AM              -
 ```
 $ wimt -b CBE -s fakeemail@gmail.com 16526
 ```
+![Email Report](/images/email-report.png?raw=true)
