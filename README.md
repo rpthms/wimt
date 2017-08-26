@@ -9,9 +9,13 @@ Options available:
 # Installation
 You can use either of the following methods:
 - Clone the repo and install manually
-  `python setup.py install`
+  ```
+  python setup.py install
+  ```
 - Run pip directly on the master branch's archive file
-  `pip install https://github.com/rpthms/wimt/archive/master.zip` 
+  ```
+  pip install https://github.com/rpthms/wimt/archive/master.zip
+  ```
 
 # Syntax
 ```
