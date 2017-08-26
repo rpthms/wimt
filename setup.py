@@ -19,7 +19,7 @@ setup(
     # Entry point
     entry_points={
         'console_scripts': [
-            'wimt = wimt:main'
+            'wimt = wimt.__main__:main'
         ]
     }
 )

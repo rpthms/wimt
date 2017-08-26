@@ -21,7 +21,7 @@ USER_AGENT= ('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36'
            '(KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36')
 HEADERS = {'User-Agent' : USER_AGENT}
 
-TEMPLATE_FILE='tabl_tmpl.j2'
+TEMPLATE_FILE='table_tmpl.j2'
 
 # wimt configuration file
 CONF_FILE = os.path.expanduser('~/.config/wimt.conf')
