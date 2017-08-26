@@ -1,9 +1,9 @@
 # wimt
-Where is my train? - Find your train's current location ( Using https://runningstatus.in as source for data )
+Where is my train? - Find your train's current location ( Using https://runningstatus.in as the source for data )
 
 Options available:
 
-- Limit output to your boarding station
+- Limit output till your boarding station
 - Send an email report instead of getting console output
 
 # Syntax
