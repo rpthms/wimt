@@ -9,7 +9,8 @@ setup(
     author_email='ronnietom@gmail.com',
     license='MIT',
 
-    py_modules=['wimt'],
+    packages=['wimt'],
+    include_package_data=True,
 
     # Required packages
     install_requires=['requests', 'lxml', 'jinja2'],

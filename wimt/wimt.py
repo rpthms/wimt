@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
 
 # wimt - Where is my train?
 # Python script to find your train's current location
 
-import argparse
 import configparser
 import os
 import re
@@ -13,7 +11,7 @@ from email.message import EmailMessage
 
 import requests
 from lxml import html
-from jinja2 import Environment, FileSystemLoader 
+from jinja2 import Environment, PackageLoader
 
 BASE_URL = 'https://runningstatus.in/status/{}-today'
 
@@ -23,7 +21,7 @@ USER_AGENT= ('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36'
            '(KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36')
 HEADERS = {'User-Agent' : USER_AGENT}
 
-TEMPLATE_FILE='table_tmpl.j2'
+TEMPLATE_FILE='tabl_tmpl.j2'
 
 # wimt configuration file
 CONF_FILE = os.path.expanduser('~/.config/wimt.conf')
@@ -101,7 +99,7 @@ def send_email_report(data, email):
     msg['To'] = email 
 
     env = Environment(
-        loader=FileSystemLoader('./'),
+        loader=PackageLoader('wimt', ''),
         trim_blocks=True,
         lstrip_blocks=True
     )
@@ -120,25 +118,3 @@ def send_email_report(data, email):
         if password:
             s.login(username, password)
         s.send_message(msg)
-
-def main():
-    parser = argparse.ArgumentParser(
-        description="Find your train's current location")
-    parser.add_argument('-b', '--boarding-station',
-        help='limit the output to the given boarding station',
-        dest='station')
-    parser.add_argument('-s', '--send-to',
-        help='send the output to the given email ID',
-        dest='email')
-    parser.add_argument(
-        'train', help='the train number to track the status of')
-    args = parser.parse_args()
-
-    data = get_train_data(args.train, args.station)
-    if args.email:
-        send_email_report(data, args.email)
-    else:
-       print(create_text_timetable(data))
-    
-if __name__ == '__main__':
-    main()
